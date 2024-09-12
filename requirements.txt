@@ -1,0 +1,16 @@
+# LangChain and its provider-specific extensions
+langchain==0.2.16
+langchain_anthropic==0.1.23  # For Claude models
+langchain_google_genai==1.0.10  # For Gemini models
+langchain_groq==0.1.9  # For Groq models
+langchain_mistralai==0.1.13  # For Mistral AI models
+langchain_openai==0.1.23  # For GPT models
+
+PyPDF2==3.0.1
+
+# Environment variable management
+python-dotenv==1.0.1
+
+# Web application framework
+streamlit==1.36.0
+
