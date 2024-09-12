@@ -9,12 +9,53 @@ AI-Research-Paper-Explainer transforms complex research papers into clear, diges
 
 ## 🌟 Features
 
-- 📄 PDF Upload
-- 🧠 Multi-LLM Support (GPT-4, Claude, Gemini, and more)
-- 🎓 Adaptive Explanations (High School to Expert level)
-- 🔍 Comprehensive Insights (Main ideas, examples, prerequisites, math concepts)
-- ⚡ Efficient Processing
+- 📄 PDF Upload: Upload and process research papers in PDF format.
+- 🧠 Multi-LLM Support: Choose from a wide range of LLMs including:
+  - OpenAI models (GPT-4, GPT-3.5-turbo)
+  - Anthropic models (Claude-3 Opus, Sonnet, Haiku)
+  - Google models (Gemini Pro, Gemini 1.5 Pro, Gemini 1.5 Flash)
+  - Groq models (Mixtral, LLaMA variants)
+  - Mistral AI models
+- 🎓 Adaptive Explanations: Tailor explanations from High School to Expert level.
+- 🔍 Comprehensive Insights:
+  - Main ideas and methodology
+  - Concrete examples
+  - Prerequisites
+  - Mathematical concepts
+- ⚡ Efficient Processing:
+  - Async mode for faster processing (with compatible LLMs)
+  - Non-async mode with optional sleep for rate-limited APIs
 - 🖥️ Intuitive Streamlit Interface
+- 📊 Flexible Summarization: Choose between map-reduce, refine, or stuff methods
+- 🔄 Customizable Execution:
+  - Async/Non-async processing
+  - Sleep option for rate limiting (useful for free-tier API usage)
+
+## 📸 Screenshots
+
+### Initial UI with Paper Summary
+![Front Page](docs/assets/front.png)
+*The starting page of the UI, showing a summary of the uploaded paper.*
+
+### Chunk Display
+![Chunk Display](docs/assets/chunk.png)
+*Display of a specific chunk from the paper.*
+
+### Prerequisites Explanation
+![Prerequisites](docs/assets/prereq.png)
+*Explanation of prerequisites for understanding the current chunk.*
+
+### Content Explanation
+![Content Explanation](docs/assets/explain.png)
+*Detailed explanation of the content within the chunk.*
+
+### Mathematical Concepts
+![Math Concepts](docs/assets/math.png)
+*Breakdown of mathematical concepts present in the chunk.*
+
+### Examples
+![Examples](docs/assets/examples.png)
+*Practical examples related to the concepts in the chunk.*
 
 ## 🚀 Quick Start
 
@@ -48,31 +89,48 @@ AI-Research-Paper-Explainer transforms complex research papers into clear, diges
 
 6. Open `http://localhost:8501` in your browser.
 
-## 📸 Screenshots
 
-### Initial UI with Paper Summary
-![Front Page](docs/assets/front.png)
-*The starting page of the UI, showing a summary of the uploaded paper.*
+## 📊 Using the Explainer
 
-### Chunk Display
-![Chunk Display](docs/assets/chunk.png)
-*Display of a specific chunk from the paper.*
+1. **Upload Your Paper**: Use the sidebar to upload a PDF of the research paper.
 
-### Prerequisites Explanation
-![Prerequisites](docs/assets/prereq.png)
-*Explanation of prerequisites for understanding the current chunk.*
+2. **Choose Your LLM**: Select from a variety of LLM providers and models.
 
-### Content Explanation
-![Content Explanation](docs/assets/explain.png)
-*Detailed explanation of the content within the chunk.*
+3. **Configure Explanation Options**:
+   - Set the difficulty level (High School to Expert)
+   - Choose to include examples, prerequisites, and mathematical explanations
+   - (Future feature) Option to find and summarize similar papers
 
-### Mathematical Concepts
-![Math Concepts](docs/assets/math.png)
-*Breakdown of mathematical concepts present in the chunk.*
+4. **Advanced Settings**:
+   - **Execution Mode**: 
+     - Async: Faster processing, ideal for paid API tiers
+     - Non-Async: Suitable for free API tiers or rate-limited usage
+   - **Sleep Option**: When using Non-Async mode, enable this to add pauses between API calls (helps with rate limits)
+   - **Summarization Method**: Choose between map_reduce, refine, or stuff algorithms
 
-### Examples
-![Examples](docs/assets/examples.png)
-*Practical examples related to the concepts in the chunk.*
+5. **Process the Paper**: Click "Process Paper" to start the explanation generation.
+
+6. **Review Results**: The app will display:
+   - A summary of the entire paper
+   - Chunk-by-chunk breakdowns including:
+     - Original text
+     - Prerequisites (if selected)
+     - Detailed explanation
+     - Examples (if selected)
+     - Mathematical concepts (if selected and present in the chunk)
+
+## 💡 Tips for Usage
+
+- **Free Tier Users**: If you're using free tier APIs (e.g., Groq or Gemini):
+  - Select "Non-Async" execution mode
+  - Enable the "Include Sleeps" option in Additional Settings
+  - This will add pauses between API calls to help manage rate limits
+- **Paid Tier Users**: For faster processing, use the "Async" execution mode.
+- **Difficulty Level**: Adjust based on your target audience or personal understanding.
+- **Summarization Method**:
+  - `map_reduce`: Good for longer papers, summarizes in parts then combines
+  - `refine`: Iteratively refines the summary, good for nuanced papers
+  - `stuff`: Best for shorter papers, processes all text at once
 
 ## 🔮 Future Developments
 
